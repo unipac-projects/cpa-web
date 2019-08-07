@@ -1,0 +1,31 @@
+<div class="component-container mat-elevation-z8">
+    <div class="component-loading-shade" *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+        <a mat-flat-button color="primary" [routerLink]="['/courses']">
+            <mat-icon>list</mat-icon>
+        </a>
+    </div>
+    <mat-card class="component-card">
+        <form [formGroup]="coursesForm" (ngSubmit)="onFormSubmit(coursesForm.value)">
+            <mat-form-field class="component-full-width">
+                <mat-select placeholder="company" formControlName="companyId" [errorStateMatcher]="matcher">
+                    <mat-option *ngFor="let company of companys" [value]="company.id">{{company.name}}</mat-option>
+                </mat-select>
+                <mat-error>
+                    <span *ngIf="!coursesForm.get('companyId').valid && coursesForm.get('companyId').touched">Please enter companyType</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="component-full-width">
+                <input matInput placeholder="course" formControlName="name" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!coursesForm.get('name').valid && coursesForm.get('name').touched">Please enter Name</span>
+                </mat-error>
+            </mat-form-field>
+            <div class="button-row">
+                <button type="submit" [disabled]="!coursesForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+            </div>
+        </form>
+    </mat-card>
+</div>

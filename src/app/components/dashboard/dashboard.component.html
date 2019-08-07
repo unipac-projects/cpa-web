@@ -1,0 +1,119 @@
+<br />
+<!-- Top Card -->
+<mat-card class="top-card">
+    <mat-card-header>
+      <div mat-card-avatar class="top-header-image"></div>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <!--img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" -->
+    <mat-card-content>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+</mat-card>
+<br />
+<!-- Top Card -->
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <mat-card class="project-card">
+        <mat-card-header>
+            <mat-card-title>Ultimos Projetos</mat-card-title>
+            <mat-card-subtitle>Projetos recentemente adicionados </mat-card-subtitle>
+        </mat-card-header>
+        <mat-list>
+          <mat-list-item>
+            <img mat-list-avatar src="..." alt="Desc 1">
+            <h3 mat-line>Title 1</h3>
+            <p mat-line>
+              <span>An awesome description</span>
+            </p>
+          </mat-list-item>
+                  
+          <mat-list-item>
+            <img mat-list-avatar src="..." alt="Desc 2">
+            <h3 mat-line>Title 2</h3>
+            <p mat-line>
+             <span>Another awesome description</span>
+            </p>
+           </mat-list-item>
+                  
+           <mat-list-item>
+             <img mat-list-avatar src="..." alt="Desc 3">
+             <h3 mat-line>Title 3</h3>
+             <p mat-line>
+              <span>Yet another awesome description</span>
+             </p>
+            </mat-list-item>
+          </mat-list>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+            <mat-card class="estimate-card">
+              <mat-card-header>
+                  <mat-card-title>Ultimas Emtimativas</mat-card-title>
+                  <mat-card-subtitle>Emtimativas recentemente adicionadas</mat-card-subtitle>
+              </mat-card-header>
+              <mat-list>
+                <mat-list-item>
+                  <img mat-list-avatar src="..." alt="Desc 1">
+                  <h3 mat-line>Title 1</h3>
+                  <p mat-line>
+                    <span>An awesome description</span>
+                  </p>
+                </mat-list-item>
+                        
+                <mat-list-item>
+                  <img mat-list-avatar src="..." alt="Desc 2">
+                  <h3 mat-line>Title 2</h3>
+                  <p mat-line>
+                   <span>Another awesome description</span>
+                  </p>
+                 </mat-list-item>
+                        
+                 <mat-list-item>
+                   <img mat-list-avatar src="..." alt="Desc 3">
+                   <h3 mat-line>Title 3</h3>
+                   <p mat-line>
+                    <span>Yet another awesome description</span>
+                   </p>
+                  </mat-list-item>
+                </mat-list>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+              
+          </mat-grid-tile>
+</mat-grid-list>
+
+
+<mat-grid-list cols="3" rowHeight="520px">
+    <!--mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color" -->
+   <!--[colspan]="d.cols" [rowspan]="d.rows" [style.background]="d.color" -->
+    <mat-grid-tile *ngFor="let d of dash">
+        <!--mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{d.id}}</mat-card-title>
+                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button (click)="register()"><mat-icon>list_alt</mat-icon>Candidatar</button>
+                <button mat-button (click)="register()"><mat-icon>list_alt</mat-icon></button>
+            </mat-card-actions>
+        </mat-card -->
+    </mat-grid-tile>
+</mat-grid-list>

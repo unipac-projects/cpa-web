@@ -1,0 +1,43 @@
+<div class="component-container mat-elevation-z8">
+    <div class="component-loading-shade" *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+        <a mat-flat-button color="primary" (click)="studentDetails()">
+            <mat-icon>info</mat-icon>
+        </a>
+    </div>
+    <mat-card class="component-card">
+        <form [formGroup]="studentsForm" (ngSubmit)="onFormSubmit(studentsForm.value)">
+            <mat-form-field class="component-full-width">
+                <mat-select placeholder="companyType" formControlName="companyId" [errorStateMatcher]="matcher">
+                    <mat-option *ngFor="let company of companys" [value]="company.id">{{company.name}}</mat-option>
+                </mat-select>
+                <mat-error>
+                    <span *ngIf="!studentsForm.get('companyId').valid && studentsForm.get('companyId').touched">Please enter companyType</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="component-full-width">
+                <input matInput placeholder="Student Name" formControlName="name" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!studentsForm.get('name').valid && studentsForm.get('name').touched">Please enter Name</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="component-full-width">
+                <input matInput placeholder="Student email" formControlName="email" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!studentsForm.get('email').valid && studentsForm.get('email').touched">Please enter email</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="component-full-width">
+                <input matInput placeholder="Student mobile" formControlName="mobile" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!studentsForm.get('mobile').valid && studentsForm.get('mobile').touched">Please enter mobile</span>
+                </mat-error>
+            </mat-form-field>
+            <div class="button-row">
+                <button type="submit" [disabled]="!studentsForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+            </div>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,101 @@
+<mat-sidenav-container class="tp-container">
+  <mat-sidenav #sidenav mode="side" opened *ngIf="isLoggednIn()">
+    <img src="../assets/images/cpa-logo.png" width="230" height="40" style="margin-top: 10px" />
+    <hr>
+    <section class="tp-section">
+      <button mat-menu-item (click)="navigate('dashboard')" *ngIf="isLoggednIn()">
+        <mat-icon>desktop_mac</mat-icon>
+        <span>dashboard</span>
+      </button>
+    </section>
+    <!--section class="tp-section">
+        <button mat-menu-item (click)="navigate('table')" *ngIf="isLoggednIn()">
+            <mat-icon>desktop_mac</mat-icon>
+            <span>table</span>
+        </button>
+       </section-->
+    <section class="tp-section">
+      <button mat-menu-item (click)="navigate('dashboard')" *ngIf="isLoggednIn()">
+        <mat-icon>list</mat-icon>
+        <span>Avaliação</span>
+      </button>
+    </section>
+    <section class="tp-section">
+      <button mat-menu-item (click)="navigate('dashboard')" *ngIf="isLoggednIn()">
+        <mat-icon>pie_chart_outlined</mat-icon>
+        <span>Relatórios</span>
+      </button>
+    </section>
+    <section class="tp-section">
+      <button mat-menu-item (click)="navigate('logout')" *ngIf="isLoggednIn()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </section>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <!-- Content -->
+    <mat-toolbar color="primary">
+      <span class="fill-remaining-space">
+        <button mat-icon-button>
+          <mat-icon>menu</mat-icon>
+        </button>
+      </span>
+      <span class="fill-remaining-space">CPA - Unipac</span>
+      <button mat-icon-button [mat-menu-trigger-for]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" [overlapTrigger]="false">
+        <!--button mat-menu-item (click)="navigate('dashboard')" *ngIf="isLoggednIn()">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+      </button-->
+        <!--button mat-menu-item (click)="navigate('register')" *ngIf="isLoggednIn()">
+          <mat-icon>movie</mat-icon>
+          <span>register</span>
+      </butto-->
+        <button mat-menu-item (click)="navigate('company-types')" *ngIf="isLoggednIn()">
+          <mat-icon>build</mat-icon>
+          <span>Tipo de Empresa</span>
+        </button>
+        <button mat-menu-item (click)="navigate('companys')" *ngIf="isLoggednIn()">
+          <mat-icon>category</mat-icon>
+          <span>Empresa</span>
+        </button>
+        <button mat-menu-item (click)="navigate('students')" *ngIf="isLoggednIn()">
+          <mat-icon>movie</mat-icon>
+          <span>Aluno</span>
+        </button>
+        <button mat-menu-item (click)="navigate('courses')" *ngIf="isLoggednIn()">
+          <mat-icon>movie</mat-icon>
+          <span>Curso</span>
+        </button>
+        <button mat-menu-item (click)="navigate('periods')" *ngIf="isLoggednIn()">
+          <mat-icon>movie</mat-icon>
+          <span>Periodo</span>
+        </button>
+        <button mat-menu-item (click)="navigate('disciplines')" *ngIf="isLoggednIn()">
+          <mat-icon>movie</mat-icon>
+          <span>Disciplina</span>
+        </button>
+        <button mat-menu-item (click)="navigate('professors')" *ngIf="isLoggednIn()">
+          <mat-icon>build</mat-icon>
+          <span>Professor</span>
+        </button>
+        <button mat-menu-item (click)="navigate('evaluations')" *ngIf="isLoggednIn()">
+          <mat-icon>build</mat-icon>
+          <span>Avaliação</span>
+        </button>
+        <!--button mat-menu-item (click)="navigate('logout')" *ngIf="isLoggednIn()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button-->
+      </mat-menu>
+    </mat-toolbar>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+  <!-- content -->
+</mat-sidenav-container>

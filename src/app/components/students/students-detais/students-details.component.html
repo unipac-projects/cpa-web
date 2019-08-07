@@ -1,0 +1,72 @@
+<div class="component-container mat-elevation-z8">
+    <div class="component-loading-shade" *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+        <a mat-flat-button color="primary" [routerLink]="['/students']">
+            <mat-icon>list</mat-icon>
+        </a>
+    </div>
+    <mat-card class="component-card">
+        <mat-card-header>
+            <mat-card-title>
+                <h2>{{student.name}}</h2>
+            </mat-card-title>
+            <mat-card-subtitle>{{student.name}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <dl>
+                <dt>student:</dt>
+                <dd>{{student.name}}</dd>
+            </dl>
+        </mat-card-content>
+
+        <mat-card-header>
+            <mat-card-title>
+                <h2>{{student.email}}</h2>
+            </mat-card-title>
+            <mat-card-subtitle>{{student.email}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <dl>
+                <dt>email:</dt>
+                <dd>{{student.email}}</dd>
+            </dl>
+        </mat-card-content>
+
+        <mat-card-header>
+            <mat-card-title>
+                <h2>{{student.mobile}}</h2>
+            </mat-card-title>
+            <mat-card-subtitle>{{student.mobile}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <dl>
+                <dt>mobile:</dt>
+                <dd>{{student.mobile}}</dd>
+            </dl>
+        </mat-card-content>
+
+       <mat-card-header>
+            <mat-card-title>
+                <h2>{{student.companyId}}</h2>
+            </mat-card-title>
+            <mat-card-subtitle>{{student.companyId}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <dl>
+                <dt>companyId:</dt>
+                <dd>{{student.companyId}}</dd>
+            </dl>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <a mat-flat-button color="primary" [routerLink]="['/students-edit', student.id]">
+                <mat-icon>edit</mat-icon>
+            </a>
+            <a mat-flat-button color="warn" (click)="delete(student.id)">
+                <mat-icon>delete</mat-icon>
+            </a>
+        </mat-card-actions>
+    </mat-card>
+</div>
