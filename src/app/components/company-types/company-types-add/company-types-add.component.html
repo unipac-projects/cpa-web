@@ -10,7 +10,7 @@
         <mat-card class="component-card">
             <form [formGroup]="companyTypesForm" (ngSubmit)="onFormSubmit(companyTypesForm.value)">
                 <mat-form-field class="component-full-width">
-                    <input matInput placeholder="Company Name" formControlName="name" [errorStateMatcher]="matcher">
+                    <input matInput placeholder="Tipo da Instituição" formControlName="name" [errorStateMatcher]="matcher">
                     <mat-error>
                         <span *ngIf="!companyTypesForm.get('name').valid && companyTypesForm.get('name').touched">Please enter Name</span>
                     </mat-error>

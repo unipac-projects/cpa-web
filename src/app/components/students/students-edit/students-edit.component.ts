@@ -1,5 +1,5 @@
+import { StudentService } from '../../../services/student/student.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { ProfessorService } from '../../../services/professor/professor.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Student } from '../../../shared/Student';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
@@ -22,7 +22,7 @@ export class StudentsEditComponent implements OnInit {
   isLoadingResults = false;
   companys: Company[] = [];
 
-  constructor(private api: ProfessorService,
+  constructor(private api: StudentService,
     private companyApi: CompanyService,
     private router: Router,
     private route: ActivatedRoute,

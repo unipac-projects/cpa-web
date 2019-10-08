@@ -10,11 +10,11 @@
     <mat-card class="component-card">
         <form [formGroup]="studentsForm" (ngSubmit)="onFormSubmit(studentsForm.value)">
             <mat-form-field class="component-full-width">
-                <mat-select placeholder="companyType" formControlName="companyId" [errorStateMatcher]="matcher">
+                <mat-select placeholder="Company" formControlName="companyId" [errorStateMatcher]="matcher">
                     <mat-option *ngFor="let company of companys" [value]="company.id">{{company.name}}</mat-option>
                 </mat-select>
                 <mat-error>
-                    <span *ngIf="!studentsForm.get('companyId').valid && studentsForm.get('companyId').touched">Please enter companyType</span>
+                    <span *ngIf="!studentsForm.get('companyId').valid && studentsForm.get('companyId').touched">Please enter Company</span>
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="component-full-width">
@@ -24,13 +24,13 @@
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="component-full-width">
-                <input matInput placeholder="Student email" formControlName="email" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Student Email" formControlName="email" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!studentsForm.get('email').valid && studentsForm.get('email').touched">Please enter email</span>
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="component-full-width">
-                <input matInput placeholder="Client mobile" formControlName="mobile" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Student Mobile" formControlName="mobile" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!studentsForm.get('mobile').valid && studentsForm.get('mobile').touched">Please enter mobile</span>
                 </mat-error>
