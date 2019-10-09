@@ -8,27 +8,22 @@
         </a>
     </div>
     <mat-card class="component-card">
-        <mat-card-header>
-            <mat-card-title>
-                <h2>{{evaluation.name}}</h2>
-            </mat-card-title>
-            <mat-card-subtitle>{{evaluation.name}}</mat-card-subtitle>
-        </mat-card-header>
+        <h2>Detail Evaluation</h2>
         <mat-card-content>
             <dl>
-                <dt>Company Type:</dt>
+                <dt>Name:</dt>
                 <dd>{{evaluation.name}}</dd>
             </dl>
         </mat-card-content>
         <mat-card-content>
             <dl>
-                <dt>Company Type:</dt>
+                <dt>Description:</dt>
                 <dd>{{evaluation.description}}</dd>
             </dl>
         </mat-card-content>
         <mat-card-content>
             <dl>
-                <dt>Company Type:</dt>
+                <dt>Date:</dt>
                 <dd>{{evaluation.date | date: 'dd/MM/yyyy'}}</dd>
             </dl>
         </mat-card-content>

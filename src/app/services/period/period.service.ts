@@ -17,7 +17,7 @@ const httpOptions = {
 })
 export class PeriodService {
   private BASE_URL: string = environment.baseUrl;
-  private apiUrl = `${this.BASE_URL}/v1/company-types`;
+  private apiUrl = `${this.BASE_URL}/periods`;
   
   constructor(private http: HttpClient) { }
 
