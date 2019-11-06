@@ -18,7 +18,7 @@
             </mat-form-field>
 
             <mat-form-field class="component-full-width">
-                <input matInput placeholder="Period Description" formControlName="name" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Period Description" formControlName="description" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!periodsForm.get('description').valid && periodsForm.get('description').touched">Please enter Description</span>
                 </mat-error>

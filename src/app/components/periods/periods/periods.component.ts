@@ -47,10 +47,10 @@ export class PeriodsComponent implements OnInit {
     this.api.remove(id)
       .subscribe(res => {
         this.router.navigate(['/periods']);
-      }, (err) => {
-        console.log(err);
-      }
-      );
+        }, (err) => {
+          console.log(err);
+        }
+    );
   }
 
   /**

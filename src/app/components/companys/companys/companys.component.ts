@@ -23,7 +23,6 @@ export class CompanysComponent implements OnInit {
   
   constructor(private api: CompanyService,
               private router: Router) {
-     
     this.dataSource = new MatTableDataSource(this.companys);
   }
  
@@ -68,10 +67,10 @@ export class CompanysComponent implements OnInit {
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
   }
-  
+
   ngOnInit() {
     console.log('');
     this.get();
   }
-  
+
 }
