@@ -9,15 +9,25 @@
     </div>
     <mat-card class="component-card">
         <form [formGroup]="periodsForm" (ngSubmit)="onFormSubmit(periodsForm.value)">
+
             <mat-form-field class="component-full-width">
-                <input matInput placeholder="Company Name" formControlName="name" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Period Name" formControlName="name" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!periodsForm.get('name').valid && periodsForm.get('name').touched">Please enter Name</span>
                 </mat-error>
             </mat-form-field>
+
+            <mat-form-field class="component-full-width">
+                <input matInput placeholder="Period Description" formControlName="name" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!periodsForm.get('description').valid && periodsForm.get('description').touched">Please enter Description</span>
+                </mat-error>
+            </mat-form-field>
+
             <div class="button-row">
                 <button type="submit" [disabled]="!periodsForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
             </div>
         </form>
     </mat-card>
 </div>
+

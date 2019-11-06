@@ -13,7 +13,7 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 export class PeriodsComponent implements OnInit {
 
   titulo = 'Period List';
-  displayedColumns: string[] = ['Id', 'Name'];
+  displayedColumns: string[] = ['Id', 'Name', 'actions'];
   isLoadingResults = true;
   periods: Period[] = [];
   dataSource: MatTableDataSource<Period>;
@@ -46,7 +46,7 @@ export class PeriodsComponent implements OnInit {
   delete(id: number) {
     this.api.remove(id)
       .subscribe(res => {
-        this.get()
+        this.router.navigate(['/periods']);
       }, (err) => {
         console.log(err);
       }

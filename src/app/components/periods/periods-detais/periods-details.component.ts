@@ -13,21 +13,11 @@ export class PeriodsDetailsComponent implements OnInit {
   period = new Period();
   id: number;
   name: string;
+  description: string;
   isLoadingResults = true;
   constructor(private api: PeriodService, 
               private router: Router,
               private route: ActivatedRoute) { }
-
-  delete(id: number) {
-    this.api.remove(id)
-      .subscribe(res => {
-        console.log(res);
-        this.router.navigate(['/periods']);
-      }, (err) => {
-        console.log(err);
-      }
-    );  
-  }
 
   ngOnInit() {
     let id = this.route.snapshot.params['id'];

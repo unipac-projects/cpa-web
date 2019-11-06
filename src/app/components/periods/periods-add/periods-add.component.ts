@@ -14,6 +14,7 @@ export class PeriodsAddComponent implements OnInit {
   //Melhoria trazendo o Objeto
   @Input() period = new Period(); //{id: '', nome: '', descricao: ''};
   name: string;
+  description: String;
   periodsForm: FormGroup;
   isLoadingResults = false;
 
@@ -24,9 +25,10 @@ export class PeriodsAddComponent implements OnInit {
 onFormSubmit(form:NgForm) {
   this.isLoadingResults = true;
   
-  const { name } = this.periodsForm.value;
+  const { name, description } = this.periodsForm.value;
   this.period = new Period();
   this.period.name = name;
+  this.period.description = description;
 
   this.api.add(this.period)
     .subscribe(res => {
@@ -50,7 +52,8 @@ onFormSubmit(form:NgForm) {
   
   ngOnInit() {
     this.periodsForm = this.formBuilder.group({
-      'name' : [null, Validators.required]
+      'name' : [null, Validators.required],
+      'description' : [null, Validators.required]
     });
   }
 }

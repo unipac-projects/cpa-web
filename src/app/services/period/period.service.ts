@@ -17,14 +17,14 @@ const httpOptions = {
 })
 export class PeriodService {
   private BASE_URL: string = environment.baseUrl;
-  private apiUrl = `${this.BASE_URL}/v1/company-types`;
+  private apiUrl = `${this.BASE_URL}/v1/periods`;
   
   constructor(private http: HttpClient) { }
 
   get(): Observable<Period[]> {
       console.log('Heeee:' + httpOptions);
     return this.http.get<Period[]>(this.apiUrl, httpOptions).pipe(
-      tap(tipoServicos => console.log('get all periods' + Period)),
+      tap(period => console.log('get all periods' + period)),
       catchError(this.handleError('get-Period', []))
     );
   }
