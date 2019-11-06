@@ -5,6 +5,7 @@ import { Student } from '../../../shared/Student';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { CompanyService } from 'src/app/services/company/company.service';
 import { Company } from 'src/app/shared/Company';
+import { StudentService } from 'src/app/services/student/student.service';
 
 @Component({
   selector: 'app-students-edit',
@@ -22,7 +23,7 @@ export class StudentsEditComponent implements OnInit {
   isLoadingResults = false;
   companys: Company[] = [];
 
-  constructor(private api: ProfessorService,
+  constructor(private api: StudentService,
     private companyApi: CompanyService,
     private router: Router,
     private route: ActivatedRoute,

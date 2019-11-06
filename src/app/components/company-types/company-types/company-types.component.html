@@ -8,6 +8,7 @@
   <div class="component-loading-shade" *ngIf="isLoadingResults">
       <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
   </div>
+  
   <mat-table #table [dataSource]="dataSource" matSort>
 
     <!-- ID Column -->

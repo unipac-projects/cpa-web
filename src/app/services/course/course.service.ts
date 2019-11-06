@@ -19,12 +19,13 @@ export class CourseService {
   private BASE_URL: string = environment.baseUrl;
   private apiUrl = `${this.BASE_URL}/v1/courses`;
  
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   get(): Observable<Course[]> {
+    console.log('Heeee:' + httpOptions);
     return this.http.get<Course[]>(this.apiUrl, httpOptions).pipe(
-      tap(course => console.log('get all course' + course)),
-      catchError(this.handleError('get-course', []))
+      tap(course => console.log('get all course' + Course)),
+      catchError(this.handleError('get-Course', []))
     );
   }
 

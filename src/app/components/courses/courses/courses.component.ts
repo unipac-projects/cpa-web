@@ -13,7 +13,7 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 export class CoursesComponent implements OnInit {
 
   titulo = 'Company List';
-  displayedColumns: string[] = ['Id', 'Name'];
+  displayedColumns: string[] = ['Id', 'Name', 'actions'];
   isLoadingResults = true;
   courses: Course[] = [];
   dataSource: MatTableDataSource<Course>;
@@ -23,6 +23,7 @@ export class CoursesComponent implements OnInit {
   
   constructor(private api: CourseService,
     private router: Router) {
+
     this.dataSource = new MatTableDataSource(this.courses);
   }
 
