@@ -26,10 +26,10 @@ export class StudentsAddComponent implements OnInit {
               private companyApi: CompanyService,
               private router: Router,
               private formBuilder: FormBuilder) { }
-  
+
 onFormSubmit(form:NgForm) {
   this.isLoadingResults = true;
-  
+
   const { name, email, mobile, companyId } = this.studentsForm.value;
   this.student = new Student();
   this.student.name = name;

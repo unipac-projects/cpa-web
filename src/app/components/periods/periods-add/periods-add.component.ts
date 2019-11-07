@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PeriodService } from '../../../services/period/period.service';
 import { Period } from '../../../shared/Period';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Professor } from 'src/app/shared/Professor';
+import { ProfessorService } from 'src/app/services/professor/professor.service';
 
 @Component({
   selector: 'app-periods-add',
@@ -15,20 +17,24 @@ export class PeriodsAddComponent implements OnInit {
   @Input() period = new Period(); //{id: '', nome: '', descricao: ''};
   name: string;
   description: String;
+  professorId: number;
   periodsForm: FormGroup;
   isLoadingResults = false;
+  professors: Professor[] = [];
 
-  constructor(private api: PeriodService, 
+  constructor(private api: PeriodService,
+              private professorApi: ProfessorService,
               private router: Router,
               private formBuilder: FormBuilder) { }
   
 onFormSubmit(form:NgForm) {
   this.isLoadingResults = true;
   
-  const { name, description } = this.periodsForm.value;
+  const { name, description, professorId } = this.periodsForm.value;
   this.period = new Period();
   this.period.name = name;
   this.period.description = description;
+  this.period.professorId = professorId;
 
   this.api.add(this.period)
     .subscribe(res => {
@@ -49,11 +55,27 @@ onFormSubmit(form:NgForm) {
         console.log(err);
     });
   }
-  
+
+  getProfessors(): any{
+    this.professorApi.get().subscribe(professors => {
+      this.professors = professors;
+      console.log(this.professors);
+      function sayHi(){
+        alert('Hello');
+      }
+      this.isLoadingResults = false;
+    }, err =>{
+      console.log(err);
+    });
+  }
+
   ngOnInit() {
     this.periodsForm = this.formBuilder.group({
       'name' : [null, Validators.required],
-      'description' : [null, Validators.required]
+      'description' : [null, Validators.required],
+      'professorId' : [null, Validators.required]
     });
+
+    this.getProfessors();
   }
 }

@@ -19,6 +19,17 @@ export class PeriodsDetailsComponent implements OnInit {
               private router: Router,
               private route: ActivatedRoute) { }
 
+  delete(id: number) {
+    this.api.remove(id)
+      .subscribe(res => {
+        console.log(res);
+        this.router.navigate(['/courses']);
+      }, (err) => {
+        console.log(err);
+      }
+    );
+  }
+
   ngOnInit() {
     let id = this.route.snapshot.params['id'];
     this.api.getById(id).subscribe((period: Period) => {

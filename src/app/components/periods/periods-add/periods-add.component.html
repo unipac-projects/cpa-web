@@ -11,6 +11,15 @@
         <form [formGroup]="periodsForm" (ngSubmit)="onFormSubmit(periodsForm.value)">
 
             <mat-form-field class="component-full-width">
+                <mat-select placeholder="professor" formControlName="professorId" [errorStateMatcher]="matcher">
+                    <mat-option *ngFor="let professor of professors" [value]="professor.id">{{professor.name}}</mat-option>
+                </mat-select>
+                <mat-error>
+                    <span *ngIf="!periodsForm.get('professorId').valid && periodsForm.get('professorId').touched">Please enter professor</span>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="component-full-width">
                 <input matInput placeholder="Period Name" formControlName="name" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!periodsForm.get('name').valid && periodsForm.get('name').touched">Please enter Name</span>
