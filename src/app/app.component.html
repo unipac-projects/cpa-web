@@ -15,7 +15,7 @@
         </button>
        </section-->
     <section class="tp-section">
-      <button mat-menu-item (click)="navigate('dashboard')" *ngIf="isLoggednIn()">
+      <button mat-menu-item (click)="navigate('evaluations')" *ngIf="isLoggednIn()">
         <mat-icon>list</mat-icon>
         <span>Avaliação</span>
       </button>
@@ -56,35 +56,35 @@
           <span>register</span>
       </butto-->
         <button mat-menu-item (click)="navigate('company-types')" *ngIf="isLoggednIn()">
-          <mat-icon>build</mat-icon>
+          <mat-icon>business</mat-icon>
           <span>Tipo de Empresa</span>
         </button>
         <button mat-menu-item (click)="navigate('companys')" *ngIf="isLoggednIn()">
-          <mat-icon>category</mat-icon>
+          <mat-icon>apartment</mat-icon>
           <span>Empresa</span>
         </button>
         <button mat-menu-item (click)="navigate('students')" *ngIf="isLoggednIn()">
-          <mat-icon>movie</mat-icon>
+          <mat-icon>person</mat-icon>
           <span>Aluno</span>
         </button>
         <button mat-menu-item (click)="navigate('courses')" *ngIf="isLoggednIn()">
-          <mat-icon>movie</mat-icon>
+          <mat-icon>collections_bookmark</mat-icon>
           <span>Curso</span>
         </button>
         <button mat-menu-item (click)="navigate('periods')" *ngIf="isLoggednIn()">
-          <mat-icon>movie</mat-icon>
+          <mat-icon>book</mat-icon>
           <span>Periodo</span>
         </button>
         <button mat-menu-item (click)="navigate('disciplines')" *ngIf="isLoggednIn()">
-          <mat-icon>movie</mat-icon>
+          <mat-icon>library_books</mat-icon>
           <span>Disciplina</span>
         </button>
         <button mat-menu-item (click)="navigate('professors')" *ngIf="isLoggednIn()">
-          <mat-icon>build</mat-icon>
+          <mat-icon>school</mat-icon>
           <span>Professor</span>
         </button>
         <button mat-menu-item (click)="navigate('evaluations')" *ngIf="isLoggednIn()">
-          <mat-icon>build</mat-icon>
+          <mat-icon>menu_book</mat-icon>
           <span>Avaliação</span>
         </button>
         <!--button mat-menu-item (click)="navigate('logout')" *ngIf="isLoggednIn()">
