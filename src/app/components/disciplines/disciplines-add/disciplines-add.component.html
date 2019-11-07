@@ -11,7 +11,7 @@
         <form [formGroup]="disciplinesForm" (ngSubmit)="onFormSubmit(disciplinesForm.value)">
 
             <mat-form-field class="component-full-width">
-                <mat-select placeholder="professor" formControlName="professorId" [errorStateMatcher]="matcher">
+                <mat-select placeholder="Professor Name: " formControlName="professorId" [errorStateMatcher]="matcher">
                     <mat-option *ngFor="let professor of professors" [value]="professor.id">{{professor.name}}</mat-option>
                 </mat-select>
                 <mat-error>
@@ -20,14 +20,14 @@
             </mat-form-field>
 
             <mat-form-field class="component-full-width">
-                <input matInput placeholder="Discipline Name" formControlName="name" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Discipline Name: " formControlName="name" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!disciplinesForm.get('name').valid && disciplinesForm.get('name').touched">Please enter Name</span>
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field class="component-full-width">
-                <input matInput placeholder="Discipline Description" formControlName="description" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Discipline Description: " formControlName="description" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!disciplinesForm.get('description').valid && disciplinesForm.get('description').touched">Please enter Description</span>
                 </mat-error>

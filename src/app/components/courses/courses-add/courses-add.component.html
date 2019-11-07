@@ -10,7 +10,7 @@
     <mat-card class="component-card">
         <form [formGroup]="coursesForm" (ngSubmit)="onFormSubmit(coursesForm.value)">
             <mat-form-field class="component-full-width">
-                <mat-select placeholder="company" formControlName="companyId" [errorStateMatcher]="matcher">
+                <mat-select placeholder="Company Name: " formControlName="companyId" [errorStateMatcher]="matcher">
                     <mat-option *ngFor="let company of companys" [value]="company.id">{{company.name}}</mat-option>
                 </mat-select>
                 <mat-error>
@@ -18,7 +18,7 @@
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="component-full-width">
-                <input matInput placeholder="course" formControlName="name" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Course Name: " formControlName="name" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!coursesForm.get('name').valid && coursesForm.get('name').touched">Please enter Name</span>
                 </mat-error>
