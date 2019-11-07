@@ -10,7 +10,7 @@
     <mat-card class="component-card">
         <form [formGroup]="studentsForm" (ngSubmit)="onFormSubmit(studentsForm.value)">
             <mat-form-field class="component-full-width">
-                <mat-select placeholder="companyType" formControlName="companyId" [errorStateMatcher]="matcher">
+                <mat-select placeholder="Company Type: " formControlName="companyId" [errorStateMatcher]="matcher">
                     <mat-option *ngFor="let company of companys" [value]="company.id">{{company.name}}</mat-option>
                 </mat-select>
                 <mat-error>
@@ -18,19 +18,19 @@
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="component-full-width">
-                <input matInput placeholder="Student Name" formControlName="name" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Student Name: " formControlName="name" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!studentsForm.get('name').valid && studentsForm.get('name').touched">Please enter Name</span>
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="component-full-width">
-                <input matInput placeholder="Student email" formControlName="email" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Student Email: " formControlName="email" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!studentsForm.get('email').valid && studentsForm.get('email').touched">Please enter email</span>
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="component-full-width">
-                <input matInput placeholder="Client mobile" formControlName="mobile" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Student Mobile: " formControlName="mobile" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!studentsForm.get('mobile').valid && studentsForm.get('mobile').touched">Please enter mobile</span>
                 </mat-error>
