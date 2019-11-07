@@ -14,7 +14,7 @@ export class CoursesDetailsComponent implements OnInit {
   id: number;
   name: string;
   isLoadingResults = true;
-  constructor(private api: CourseService, 
+  constructor(private api: CourseService,
               private router: Router,
               private route: ActivatedRoute) { }
 

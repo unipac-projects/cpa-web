@@ -30,6 +30,13 @@
             </dl>
         </mat-card-content>
 
+        <mat-card-content>
+                <dl>
+                    <dt>Professor:</dt>
+                    <dd>{{discipline.professor.name}}</dd>
+                </dl>
+            </mat-card-content>
+
         <mat-card-actions>
             <a mat-flat-button color="primary" [routerLink]="['/disciplines-edit', discipline.id]">
                 <mat-icon>edit</mat-icon>
