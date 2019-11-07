@@ -17,7 +17,7 @@ const httpOptions = {
 })
 export class DisciplineService {
   private BASE_URL: string = environment.baseUrl;
-  private apiUrl = `${this.BASE_URL}/v1/company-types`;
+  private apiUrl = `${this.BASE_URL}/v1/disciplines`;
   
   constructor(private http: HttpClient) { }
 

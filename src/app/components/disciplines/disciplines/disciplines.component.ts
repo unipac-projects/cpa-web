@@ -13,7 +13,7 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 export class DisciplinesComponent implements OnInit {
 
   titulo = 'Discipline List';
-  displayedColumns: string[] = ['Id', 'Name'];
+  displayedColumns: string[] = ['Id', 'Name', 'actions'];
   isLoadingResults = true;
   disciplines: Discipline[] = [];
   dataSource: MatTableDataSource<Discipline>;

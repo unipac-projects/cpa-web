@@ -8,20 +8,30 @@
         </a>
     </div>
     <mat-card class="component-card">
+
         <mat-card-header>
             <mat-card-title>
                 <h2>{{discipline.name}}</h2>
             </mat-card-title>
             <mat-card-subtitle>{{discipline.name}}</mat-card-subtitle>
         </mat-card-header>
+
         <mat-card-content>
             <dl>
-                <dt>Company Type:</dt>
+                <dt>Name:</dt>
                 <dd>{{discipline.name}}</dd>
             </dl>
         </mat-card-content>
+
+        <mat-card-content>
+            <dl>
+                <dt>Description:</dt>
+                <dd>{{discipline.description}}</dd>
+            </dl>
+        </mat-card-content>
+
         <mat-card-actions>
-            <a mat-flat-button color="primary" [routerLink]="['/company-types-edit', discipline.id]">
+            <a mat-flat-button color="primary" [routerLink]="['/disciplines-edit', discipline.id]">
                 <mat-icon>edit</mat-icon>
             </a>
             <a mat-flat-button color="warn" (click)="delete(discipline.id)">
@@ -30,3 +40,6 @@
         </mat-card-actions>
     </mat-card>
 </div>
+
+
+

@@ -13,6 +13,7 @@ export class DisciplinesDetailsComponent implements OnInit {
   discipline = new Discipline();
   id: number;
   name: string;
+  description: string;
   isLoadingResults = true;
   constructor(private api: DisciplineService, 
               private router: Router,
@@ -26,7 +27,7 @@ export class DisciplinesDetailsComponent implements OnInit {
       }, (err) => {
         console.log(err);
       }
-    );  
+    );
   }
 
   ngOnInit() {

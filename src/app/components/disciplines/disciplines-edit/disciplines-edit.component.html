@@ -1,23 +1,41 @@
 <div class="component-container mat-elevation-z8">
-    <div class="component-loading-shade" *ngIf="isLoadingResults">
-        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+        <div class="component-loading-shade" *ngIf="isLoadingResults">
+            <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+        </div>
+        <div class="button-row">
+            <a mat-flat-button color="primary" (click)="disciplineDetails()">
+                <mat-icon>info</mat-icon>
+            </a>
+        </div>
+        <mat-card class="component-card">
+            <form [formGroup]="disciplinesForm" (ngSubmit)="onFormSubmit(disciplinesForm.value)">
+    
+                <mat-form-field class="component-full-width">
+                    <mat-select placeholder="professor" formControlName="professorId" [errorStateMatcher]="matcher">
+                        <mat-option *ngFor="let professor of professors" [value]="professor.id">{{professor.name}}</mat-option>
+                    </mat-select>
+                    <mat-error>
+                        <span *ngIf="!disciplinesForm.get('professorId').valid && disciplinesForm.get('professorId').touched">Please enter professor</span>
+                    </mat-error>
+                </mat-form-field>
+                
+                <mat-form-field class="component-full-width">
+                    <input matInput placeholder="Name" formControlName="name" [errorStateMatcher]="matcher">
+                    <mat-error>
+                        <span *ngIf="!disciplinesForm.get('name').valid && disciplinesForm.get('name').touched">Please enter Discipline Name</span>
+                    </mat-error>
+                </mat-form-field>
+    
+                <mat-form-field class="component-full-width">
+                    <input matInput placeholder="Description" formControlName="description" [errorStateMatcher]="matcher">
+                    <mat-error>
+                        <span *ngIf="!disciplinesForm.get('description').valid && disciplinesForm.get('description').touched">Please enter Discipline Description</span>
+                    </mat-error>
+                </mat-form-field>
+    
+                <div class="button-row">
+                    <button type="submit" [disabled]="!disciplinesForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+                </div>
+            </form>
+        </mat-card>
     </div>
-    <div class="button-row">
-        <a mat-flat-button color="primary" (click)="disciplineDetails()">
-            <mat-icon>info</mat-icon>
-        </a>
-    </div>
-    <mat-card class="component-card">
-        <form [formGroup]="disciplinesForm" (ngSubmit)="onFormSubmit(disciplinesForm.value)">
-            <mat-form-field class="component-full-width">
-                <input matInput placeholder="Name" formControlName="name" [errorStateMatcher]="matcher">
-                <mat-error>
-                    <span *ngIf="!disciplinesForm.get('name').valid && disciplinesForm.get('name').touched">Please enter Company Name</span>
-                </mat-error>
-            </mat-form-field>
-            <div class="button-row">
-                <button type="submit" [disabled]="!disciplinesForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
-            </div>
-        </form>
-    </mat-card>
-</div>
