@@ -80,6 +80,10 @@ import { DisciplinesComponent } from './components/disciplines/disciplines/disci
 import { DisciplinesAddComponent } from './components/disciplines/disciplines-add/disciplines-add.component';
 import { DisciplinesDetailsComponent } from './components/disciplines/disciplines-detais/disciplines-details.component';
 import { DisciplinesEditComponent } from './components/disciplines/disciplines-edit/disciplines-edit.component';
+import { ChoicesComponent } from './components/choices/choices/choices.component';
+import { ChoicesAddComponent } from './components/choices/choices-add/choices-add.component';
+import { ChoicesDetailsComponent } from './components/choices/choices-details/choices-details.component';
+import { ChoicesEditComponent } from './components/choices/choices-edit/choices-edit.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -121,7 +125,11 @@ registerLocaleData(localePt, 'pt-BR');
     DisciplinesAddComponent,
     DisciplinesDetailsComponent,
     DisciplinesEditComponent,
-    TableOverviewExampleComponent
+    TableOverviewExampleComponent,
+    ChoicesComponent,
+    ChoicesAddComponent,
+    ChoicesDetailsComponent,
+    ChoicesEditComponent
   ],
   imports: [
     BrowserModule,
