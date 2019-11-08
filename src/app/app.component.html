@@ -55,8 +55,16 @@
           <mat-icon>movie</mat-icon>
           <span>register</span>
       </butto-->
-        <button mat-menu-item (click)="navigate('company-types')" *ngIf="isLoggednIn()">
-          <mat-icon>business</mat-icon>
+      <button mat-menu-item (click)="navigate('choices')" *ngIf="isLoggednIn()">
+        <mat-icon>business</mat-icon>
+        <span>Opções</span>
+      </button>
+      <button mat-menu-item (click)="navigate('questions')" *ngIf="isLoggednIn()">
+        <mat-icon>business</mat-icon>
+        <span>Questões</span>
+      </button>
+      <button mat-menu-item (click)="navigate('company-types')" *ngIf="isLoggednIn()">
+        <mat-icon>business</mat-icon>
           <span>Tipo de Empresa</span>
         </button>
         <button mat-menu-item (click)="navigate('companys')" *ngIf="isLoggednIn()">
