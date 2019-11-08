@@ -84,6 +84,10 @@ import { ChoicesComponent } from './components/choices/choices/choices.component
 import { ChoicesAddComponent } from './components/choices/choices-add/choices-add.component';
 import { ChoicesDetailsComponent } from './components/choices/choices-details/choices-details.component';
 import { ChoicesEditComponent } from './components/choices/choices-edit/choices-edit.component';
+import { QuestionsComponent } from './components/questions/questions/questions.component';
+import { QuestionsAddComponent } from './components/questions/questions-add/questions-add.component';
+import { QuestionsDetailsComponent } from './components/questions/questions-details/questions-details.component';
+import { QuestionsEditComponent } from './components/questions/questions-edit/questions-edit.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -129,7 +133,11 @@ registerLocaleData(localePt, 'pt-BR');
     ChoicesComponent,
     ChoicesAddComponent,
     ChoicesDetailsComponent,
-    ChoicesEditComponent
+    ChoicesEditComponent,
+    QuestionsComponent,
+    QuestionsAddComponent,
+    QuestionsDetailsComponent,
+    QuestionsEditComponent
   ],
   imports: [
     BrowserModule,
