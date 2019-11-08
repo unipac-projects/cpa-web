@@ -11,31 +11,31 @@
         <form [formGroup]="professorsForm" (ngSubmit)="onFormSubmit(professorsForm.value)">
 
             <mat-form-field class="component-full-width">
-                <mat-select placeholder="companyType" formControlName="companyId" [errorStateMatcher]="matcher">
+                <mat-select placeholder="Company Type: " formControlName="companyId" [errorStateMatcher]="matcher">
                     <mat-option *ngFor="let company of companys" [value]="company.id">{{company.name}}</mat-option>
                 </mat-select>
                 <mat-error>
-                    <span *ngIf="!professorsForm.get('companyId').valid && professorsForm.get('companyId').touched">Please enter companyType</span>
+                    <span *ngIf="!professorsForm.get('companyId').valid && professorsForm.get('companyId').touched">Please enter Company Type</span>
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field class="component-full-width">
-                <input matInput placeholder="Professor Name" formControlName="name" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Professor Name: " formControlName="name" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!professorsForm.get('name').valid && professorsForm.get('name').touched">Please enter Name</span>
                 </mat-error>
             </mat-form-field>
             
             <mat-form-field class="component-full-width">
-                <input matInput placeholder="Professor email" formControlName="email" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Professor Email: " formControlName="email" [errorStateMatcher]="matcher">
                 <mat-error>
-                    <span *ngIf="!professorsForm.get('email').valid && professorsForm.get('email').touched">Please enter email</span>
+                    <span *ngIf="!professorsForm.get('email').valid && professorsForm.get('email').touched">Please enter Email</span>
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="component-full-width">
-                <input matInput placeholder="Professor mobile" formControlName="mobile" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Professor Mobile: " formControlName="mobile" [errorStateMatcher]="matcher">
                 <mat-error>
-                    <span *ngIf="!professorsForm.get('mobile').valid && professorsForm.get('mobile').touched">Please enter mobile</span>
+                    <span *ngIf="!professorsForm.get('mobile').valid && professorsForm.get('mobile').touched">Please enter Mobile</span>
                 </mat-error>
             </mat-form-field>
             <div class="button-row">
