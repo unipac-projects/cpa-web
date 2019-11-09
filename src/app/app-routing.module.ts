@@ -36,8 +36,69 @@ import { DisciplinesComponent } from './components/disciplines/disciplines/disci
 import { DisciplinesAddComponent } from './components/disciplines/disciplines-add/disciplines-add.component';
 import { DisciplinesDetailsComponent } from './components/disciplines/disciplines-detais/disciplines-details.component';
 import { DisciplinesEditComponent } from './components/disciplines/disciplines-edit/disciplines-edit.component';
+import { ChoicesComponent } from './components/choices/choices/choices.component';
+import { ChoicesAddComponent } from './components/choices/choices-add/choices-add.component';
+import { ChoicesDetailsComponent } from './components/choices/choices-details/choices-details.component';
+import { ChoicesEditComponent } from './components/choices/choices-edit/choices-edit.component';
+import { QuestionsComponent } from './components/questions/questions/questions.component';
+import { QuestionsAddComponent } from './components/questions/questions-add/questions-add.component';
+import { QuestionsDetailsComponent } from './components/questions/questions-details/questions-details.component';
+import { QuestionsEditComponent } from './components/questions/questions-edit/questions-edit.component';
 
 const routes: Routes = [
+
+  {
+    path: 'questions',
+    component: QuestionsComponent,
+    data: { title: 'List questions'},
+    canActivate: [AuthGuardService]
+  },
+  {
+   path:'questions-add',
+   component: QuestionsAddComponent,
+   data: { title: 'Add questions'},
+   canActivate: [AuthGuardService]
+  },
+  {
+    path: 'questions-details/:id',
+    component: QuestionsDetailsComponent,
+    data: { title: 'Details of questions'},
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'questions-edit/:id',
+    component: QuestionsEditComponent,
+    data: { title: 'Edit questions'},
+    canActivate: [AuthGuardService]
+  },
+
+
+  {
+    path: 'choices',
+    component: ChoicesComponent,
+    data: { title: 'List choices'},
+    canActivate: [AuthGuardService]
+  },
+  {
+   path:'choices-add',
+   component: ChoicesAddComponent,
+   data: { title: 'Add choices'},
+   canActivate: [AuthGuardService]
+  },
+  {
+    path: 'choices-details/:id',
+    component: ChoicesDetailsComponent,
+    data: { title: 'Details of choices'},
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'choices-edit/:id',
+    component: ChoicesEditComponent,
+    data: { title: 'Edit choices'},
+    canActivate: [AuthGuardService]
+  },
+
+
   {
     path: 'professors',
     component: ProfessorsComponent,
