@@ -1,3 +1,32 @@
-<p>
-  likert-skale-detais works!
-</p>
+<div class="component-container mat-elevation-z8">
+  <div class="component-loading-shade" *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+      <a mat-flat-button color="primary" [routerLink]="['/likertskale']">
+          <mat-icon>list</mat-icon>
+      </a>
+  </div>
+  <mat-card class="component-card">
+      <mat-card-header>
+          <mat-card-title>
+              <h2>{{likertskala.name}}</h2>
+          </mat-card-title>
+          <mat-card-subtitle>{{likertskala.name}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+          <dl>
+              <dt>Likert Skale Name: </dt>
+              <dd>{{likertskala.name}}</dd>
+          </dl>
+      </mat-card-content>
+      <mat-card-actions>
+          <a mat-flat-button color="primary" [routerLink]="['/likertskale-edit', likertskale.id]">
+              <mat-icon>edit</mat-icon>
+          </a>
+          <a mat-flat-button color="warn" (click)="delete(likertskale.id)">
+              <mat-icon>delete</mat-icon>
+          </a>
+      </mat-card-actions>
+  </mat-card>
+</div>
