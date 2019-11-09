@@ -88,6 +88,10 @@ import { QuestionsComponent } from './components/questions/questions/questions.c
 import { QuestionsAddComponent } from './components/questions/questions-add/questions-add.component';
 import { QuestionsDetailsComponent } from './components/questions/questions-details/questions-details.component';
 import { QuestionsEditComponent } from './components/questions/questions-edit/questions-edit.component';
+import { LikertSkaleComponent } from './components/likert-skale/likert-skale/likert-skale.component';
+import { LikertSkaleAddComponent } from './components/likert-skale/likert-skale-add/likert-skale-add.component';
+import { LikertSkaleDetaisComponent } from './components/likert-skale/likert-skale-detais/likert-skale-detais.component';
+import { LikertSkaleEditComponent } from './components/likert-skale/likert-skale-edit/likert-skale-edit.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -137,7 +141,11 @@ registerLocaleData(localePt, 'pt-BR');
     QuestionsComponent,
     QuestionsAddComponent,
     QuestionsDetailsComponent,
-    QuestionsEditComponent
+    QuestionsEditComponent,
+    LikertSkaleComponent,
+    LikertSkaleAddComponent,
+    LikertSkaleDetaisComponent,
+    LikertSkaleEditComponent
   ],
   imports: [
     BrowserModule,
