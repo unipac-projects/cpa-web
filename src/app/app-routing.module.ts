@@ -44,8 +44,38 @@ import { QuestionsComponent } from './components/questions/questions/questions.c
 import { QuestionsAddComponent } from './components/questions/questions-add/questions-add.component';
 import { QuestionsDetailsComponent } from './components/questions/questions-details/questions-details.component';
 import { QuestionsEditComponent } from './components/questions/questions-edit/questions-edit.component';
+import { LikertSkaleComponent } from './components/likert-skale/likert-skale/likert-skale.component';
+import { LikertSkaleAddComponent } from './components/likert-skale/likert-skale-add/likert-skale-add.component';
+import { LikertSkaleDetaisComponent } from './components/likert-skale/likert-skale-detais/likert-skale-detais.component';
+import { LikertSkaleEditComponent } from './components/likert-skale/likert-skale-edit/likert-skale-edit.component';
 
 const routes: Routes = [
+
+  {
+    path: 'likertSkale',
+    component: LikertSkaleComponent,
+    data: { title: 'List likertSkale'},
+    canActivate: [AuthGuardService]
+  },
+  {
+   path:'likertSkale-add',
+   component: LikertSkaleAddComponent,
+   data: { title: 'Add likertSkale'},
+   canActivate: [AuthGuardService]
+  },
+  {
+    path: 'likertSkale-details/:id',
+    component: LikertSkaleDetaisComponent,
+    data: { title: 'Details of likertSkale'},
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'likertSkale-edit/:id',
+    component: LikertSkaleEditComponent,
+    data: { title: 'Edit likertSkale'},
+    canActivate: [AuthGuardService]
+  },
+
 
   {
     path: 'questions',
