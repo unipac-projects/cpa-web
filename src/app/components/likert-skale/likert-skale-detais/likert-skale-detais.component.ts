@@ -18,24 +18,12 @@ export class LikertSkaleDetaisComponent implements OnInit {
               private router: Router,
               private route: ActivatedRoute) { }
 
-  delete(id: number) {
-    this.api.remove(id)
-      .subscribe(res => {
-        console.log(res);
-        this.router.navigate(['/likertskale']);
-      }, (err) => {
-        console.log(err);
-      }
-    );
-  }
-
   ngOnInit() {
     let id = this.route.snapshot.params['id'];
-    this.api.getById(id).subscribe((likertskala: LikertSkala) => {
-      console.log(likertskala);
-      this.likertskala = likertskala;
+    this.api.getById(id).subscribe((likertSkala: LikertSkala) => {
+      console.log(likertSkala);
+      this.likertskala = likertSkala;
       this.isLoadingResults = false;
     });
   }
-
 }
