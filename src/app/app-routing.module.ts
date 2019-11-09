@@ -52,25 +52,25 @@ import { LikertSkaleEditComponent } from './components/likert-skale/likert-skale
 const routes: Routes = [
 
   {
-    path: 'likertSkale',
+    path: 'likertskale',
     component: LikertSkaleComponent,
     data: { title: 'List likertSkale'},
     canActivate: [AuthGuardService]
   },
   {
-   path:'likertSkale-add',
+   path:'likertskale-add',
    component: LikertSkaleAddComponent,
    data: { title: 'Add likertSkale'},
    canActivate: [AuthGuardService]
   },
   {
-    path: 'likertSkale-details/:id',
+    path: 'likertskale-details/:id',
     component: LikertSkaleDetaisComponent,
     data: { title: 'Details of likertSkale'},
     canActivate: [AuthGuardService]
   },
   {
-    path: 'likertSkale-edit/:id',
+    path: 'likertskale-edit/:id',
     component: LikertSkaleEditComponent,
     data: { title: 'Edit likertSkale'},
     canActivate: [AuthGuardService]

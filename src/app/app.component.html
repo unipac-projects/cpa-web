@@ -55,6 +55,10 @@
           <mat-icon>movie</mat-icon>
           <span>register</span>
       </butto-->
+      <button mat-menu-item (click)="navigate('likertskale')" *ngIf="isLoggednIn()">
+        <mat-icon>business</mat-icon>
+        <span>Skala Likert</span>
+      </button>
       <button mat-menu-item (click)="navigate('choices')" *ngIf="isLoggednIn()">
         <mat-icon>business</mat-icon>
         <span>Opções</span>
