@@ -15,10 +15,10 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class CourseService {
+export class ChoiceService {
   private BASE_URL: string = environment.baseUrl;
   private apiUrl = `${this.BASE_URL}/v1/choice`;
- 
+
   constructor(private http: HttpClient) { }
 
   get(): Observable<Choice[]> {
