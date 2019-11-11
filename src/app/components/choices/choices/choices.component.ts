@@ -1,7 +1,7 @@
+import { ChoiceService } from '../../../services/choice/choice.service';
 import { Choice } from '../../../shared/Choice';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ChoiceService } from '../../../services/choice/choice.service';
 import { from } from 'rxjs';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 
@@ -12,6 +12,12 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class ChoicesComponent implements OnInit {
 
+  titulo = 'Choice List';
+  displayedColumns: string[] = ['Id', 'Description', 'Point', 'actions'];
+  isLoadingResults = true;
+  choices: Choice[] = [];
+  dataSource: MatTableDataSource<Choice>;
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
@@ -19,11 +25,6 @@ export class ChoicesComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.choices);
   }
 
-  titulo = 'Choice List';
-  displayedColumns: string[] = ['Id', 'Description', 'Point', 'actions'];
-  isLoadingResults = true;
-  choices: Choice[] = [];
-  dataSource: MatTableDataSource<Choice>;
 
   add() {
     this.router.navigate(['/choices-add']);

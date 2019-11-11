@@ -16,6 +16,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class LikertSkalaService {
+  
   private BASE_URL: string = environment.baseUrl;
   private apiUrl = `${this.BASE_URL}/v1/likert-skalas`;
 

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { catchError, tap, map } from 'rxjs/operators';
-import { Observable, of, throwError } from 'rxjs';
 import { Choice } from '../../shared/Choice';
 
 const httpOptions = {
@@ -23,6 +23,7 @@ export class ChoiceService {
   constructor(private http: HttpClient) { }
 
   get(): Observable<Choice[]> {
+    console.log('Heeee:' + httpOptions);
     return this.http.get<Choice[]>(this.apiUrl, httpOptions).pipe(
       tap(choice => console.log('get all choice' + choice)),
       catchError(this.handleError('get-choice', []))
@@ -66,5 +67,4 @@ export class ChoiceService {
       return of(result as T);
     }
   }
-
 }
