@@ -28,9 +28,12 @@
             ],
             "styles": [
               "src/styles.sass",
-              "src/theme.scss"
+              "src/theme.scss",
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -1,3 +1,38 @@
-<p>
-  choices-add works!
-</p>
+<div class="component-container mat-elevation-z8">
+  <div class="component-loading-shade" *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+      <a mat-flat-button color="primary" [routerLink]="['/choices']">
+          <mat-icon>list</mat-icon>
+      </a>
+  </div>
+  <mat-card class="component-card">
+      <form [formGroup]="choicesForm" (ngSubmit)="onFormSubmit(choicesForm.value)">
+          <mat-form-field class="component-full-width">
+              <mat-select placeholder="Likert Skale: " formControlName="likertsSkalesId" [errorStateMatcher]="matcher">
+                  <mat-option *ngFor="let likertSkale of likertsSkales" [value]="likertSkale.id">{{likertSkale.name}}</mat-option>
+              </mat-select>
+              <mat-error>
+                  <span *ngIf="!choicesForm.get('likertsSkalesId').valid && choicesForm.get('likertsSkalesId').touched">Please enter likert skale</span>
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="component-full-width">
+              <input matInput placeholder="Choice Description: " formControlName="description" [errorStateMatcher]="matcher">
+              <mat-error>
+                  <span *ngIf="!choicesForm.get('description').valid && choicesForm.get('description').touched">Please enter Description</span>
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="component-full-width">
+              <input matInput placeholder="Choice Point: " formControlName="point" [errorStateMatcher]="matcher">
+              <mat-error>
+                  <span *ngIf="!choicesForm.get('point').valid && choicesForm.get('point').touched">Please enter point</span>
+              </mat-error>
+          </mat-form-field>
+
+          <div class="button-row">
+              <button type="submit" [disabled]="!choicesForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+          </div>
+      </form>
+  </mat-card>
+</div>

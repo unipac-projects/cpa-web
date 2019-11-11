@@ -18,44 +18,44 @@ const httpOptions = {
 export class CompanyService {
   private BASE_URL: string = environment.baseUrl;
   private apiUrl = `${this.BASE_URL}/v1/companys`;
- 
+
   constructor(private http: HttpClient) {}
 
   get(): Observable<Company[]> {
     return this.http.get<Company[]>(this.apiUrl, httpOptions).pipe(
-      tap(company => console.log('get all companyTypes' + company)),
-      catchError(this.handleError('get-CompanyType', []))
+      tap(company => console.log('get all company' + company)),
+      catchError(this.handleError('get-Company', []))
     );
   }
 
-  add(companyType: Company): Observable<Company> {
-    return this.http.post<Company>(this.apiUrl, companyType, httpOptions).pipe(
-      tap((companyType: Company) => console.log('adicionou o companyType' + companyType)),
-      catchError(this.handleError<Company>('add-CompanyType'))
+  add(company: Company): Observable<Company> {
+    return this.http.post<Company>(this.apiUrl, company, httpOptions).pipe(
+      tap((company: Company) => console.log('adicionou o company' + company)),
+      catchError(this.handleError<Company>('add-Company'))
     );
   }
 
   update(id: number, company: Company): Observable<any> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.put(url, company, httpOptions).pipe(
-      tap(companyType => console.log(`updated companyType id=${id}`)),
-      catchError(this.handleError<any>('update-CompanyType'))
+      tap(company => console.log(`updated company id=${id}`)),
+      catchError(this.handleError<any>('update-Company'))
     );
   }
 
   getById(id: number): Observable<Company> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<Company>(url, httpOptions).pipe(
-      tap(companyType => console.log(`CompanyType by id=${id}`)),
-      catchError(this.handleError<Company>(`CompanyType by id=${id}`))
+      tap(company => console.log(`Company by id=${id}`)),
+      catchError(this.handleError<Company>(`Company by id=${id}`))
     );
   }
 
   remove(id: number): Observable<Company> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<Company>(url, httpOptions).pipe(
-      tap(companyType => console.log(`remove companyType by id=${id}`)),
-      catchError(this.handleError<Company>('remove - CompanyType'))
+      tap(company => console.log(`remove company by id=${id}`)),
+      catchError(this.handleError<Company>('remove - Company'))
     );
   }
 

@@ -1,3 +1,22 @@
-<p>
-  choices-details works!
-</p>
+<div *ngIf="choice">
+  <div>
+      <label>Description: </label> {{choice.description}}
+  </div>
+  <div>
+      <label>Point: </label> {{choice.point}}
+  </div>
+  <div>
+      <label>LikertSkaleId: </label> {{choice.likertSkaleId}}
+  </div>
+  <div>
+      <label>Active: </label> {{employee.active}}
+  </div>
+
+  <span class="button is-small btn-primary" *ngIf='choice.active' (click)='updateActive(false)'>Inactive</span>
+
+  <span class="button is-small btn-primary" *ngIf='!choice.active' (click)='updateActive(true)'>Active</span>
+
+  <span class="button is-small btn-danger" (click)='deleteChoice()'>Delete</span>
+
+  <hr/>
+</div>

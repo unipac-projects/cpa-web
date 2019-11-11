@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Choice } from '../../../shared/Choice';
+import { Component, OnInit, Input } from '@angular/core';
+import { ChoiceService } from '../../../services/choice/choice.service';
+import { ChoicesComponent } from '../choices/choices.component';
 
 @Component({
   selector: 'app-choices-details',
@@ -7,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChoicesDetailsComponent implements OnInit {
 
-  constructor() { }
+  @Input() choice: Choice;
+
+  constructor(private choiceService: ChoiceService, private listComponent: ChoicesComponent) { }
 
   ngOnInit() {
   }
